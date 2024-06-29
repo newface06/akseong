@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>전국 악성임대인 지도</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<link rel="manifest" href="manifest.json" />
+	<script>
+		if (typeof navigator.serviceWorker !== 'undefined') {
+			navigator.serviceWorker.register('sw.js')
+		}
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="icon" href="assets/img/favicon/favicon.png" type="image/x-icon">
+
+	<script type="text/javascript"
+		src="https://dapi.kakao.com/v2/maps/sdk.js?libraries=services,clusterer&appkey=04a815a58e47a03f3d954bb6f0cca602"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+</head>
+
+<body>
+	<div id="loading-bar" style="display: none;"></div>
+
+	<header>
+		<img class="icon" src="assets/img/favicon/favicon.png" alt="악성임대인 지도 아이콘">
+		<h1>
+			전국 악성임대인 지도 <span class="version">v.1.0</span>
+		</h1>
+		<br> <span class="date">Update : 2024-06-28</span>
+	</header>
+
+	<div id="map">
+		<div id="search-container">
+			<input type="text" id="search-input" placeholder="악성 임대인 이름으로 검색하기">
+			<button class="clear-button" id="clear-button">✖</button>
+			<div class="no-results" id="no-results">검색된 결과가 없습니다.</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>
+			해당정보는 <a href="https://www.khug.or.kr/jeonse" target="_blank">https://www.khug.or.kr/jeonse</a>
+			<a href="https://www.khug.or.kr/jeonse" target="_blank">HUG
+				안심전세포털</a> 의 데이터를 기반으로 제작되었습니다.
+		</p>
+	</footer>
+
+	<script type="text/javascript" src="assets/js/index.js"></script>
+
+</body>
+
+</html>
