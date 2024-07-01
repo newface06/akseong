@@ -5,9 +5,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "io.github.freeface06.twa",
+      "package_name": "com.akseong.www.twa",
       "sha256_cert_fingerprints": [
-        "46:AD:9B:30:BB:B9:66:71:B2:91:8B:DA:DD:05:47:C5:5C:17:4B:4D:49:F3:9F:E8:5C:14:3B:74:C8:70:9D:41"
+        "1D:1F:83:47:95:4D:C2:AA:B3:7C:A4:CA:E8:51:92:6D:27:C5:23:7F:92:D8:D5:47:8D:2F:95:3A:D1:73:8A:E8"
       ]
     }
   }
