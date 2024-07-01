@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.freeface06.twa",
+      "sha256_cert_fingerprints": [
+        "46:AD:9B:30:BB:B9:66:71:B2:91:8B:DA:DD:05:47:C5:5C:17:4B:4D:49:F3:9F:E8:5C:14:3B:74:C8:70:9D:41"
+      ]
+    }
+  }
+]

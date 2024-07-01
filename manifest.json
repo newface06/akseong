@@ -1,0 +1,26 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "전국 악성임대인 지도",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "악성임대인 지도",
+  "start_url": "/akseong-imdaein",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/img/favicon/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "akseong",
+  "description": "전국의 악성임대인 정보공유 사이트 입니다.",
+  "lang": "ko",
+  "categories": [
+    "government",
+    "social",
+    "utilities"
+  ]
+}
