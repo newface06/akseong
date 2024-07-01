@@ -1,3 +1,2 @@
 User-agent: *
-Disallow:
-Sitemap: https://newface06.github.io/sitemap.xml
+Allow:/
