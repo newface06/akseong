@@ -48,6 +48,7 @@ $(document).ready(function () {
 			console.error("데이터 가져오기 오류: ", error); // 에러를 콘솔에 출력합니다
 		}
 	});
+	createMarkers(JSON.parse(DATA));
 
 	$('#search-input').on('input', function () {
 		var searchText = $(this).val().toLowerCase();
@@ -111,87 +112,6 @@ function processAddresses(data, callback) {
 function createMarkers(data) {
 	clusterer.clear(); // 기존 마커 제거
 	markers = []; // 기존 마커 배열 초기화
-
-	DATA.forEach(function (item) {
-		if (item.주소) { // 주소가 있는지 확인
-			geocoder.addressSearch(item.주소, function (geoResult, status) {
-				if (status === kakao.maps.services.Status.OK) {
-					var coords = new kakao.maps.LatLng(geoResult[0].y, geoResult[0].x);
-					var marker = new kakao.maps.Marker({
-						position: coords
-					});
-
-					kakao.maps.event.addListener(marker, 'click', function () {
-						if (currentOverlay) {
-							currentOverlay.setMap(null);
-						}
-						var content = `
-							<div class="overlay">
-								<div class="close" onclick="closeOverlay()">✖</div>
-								<div class="info">
-									<table class="info-table">
-										<tr>
-											<th>성명</th>
-											<td>${item.성명}</td>
-										</tr>
-										<tr>
-											<th>나이</th>
-											<td>${item.나이}</td>
-										</tr>
-										<tr>
-											<th>주소</th>
-											<td>${item.주소}</td>
-										</tr>
-										<tr>
-											<th>임차보증금 반환채무</th>
-											<td>${item['임차보증금 반환채무']}</td>
-										</tr>
-										<tr>
-											<th>이행기</th>
-											<td>${item.이행기}</td>
-										</tr>
-										<tr>
-											<th>채무불이행기간</th>
-											<td>${item['채무불이행기간']}</td>
-										</tr>
-										<tr>
-											<th>보증채무이행일</th>
-											<td>${item['보증채무이행일']}}</td>
-										</tr>
-										<tr>
-											<th>구상채무</th>
-											<td>${item['구상채무']}</td>
-										</tr>
-										<tr>
-											<th>강제집행 신청횟수</th>
-											<td>${item['강제집행 신청횟수']}</td>
-										</tr>
-										<tr>
-											<th>기준일</th>
-											<td>${item.기준일}</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						`;
-						var overlay = new kakao.maps.CustomOverlay({
-							content: content,
-							map: map,
-							position: marker.getPosition()
-						});
-						currentOverlay = overlay;
-						overlay.setMap(map);
-					});
-
-					markers.push(marker);
-					clusterer.addMarkers(markers);
-				}
-			});
-		}
-	});
-
-
-
 
 	data.forEach(function (item) {
 		var coords = item[item.length - 1]; // 좌표는 데이터의 마지막 요소
