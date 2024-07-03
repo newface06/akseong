@@ -51,10 +51,16 @@ footer table {
 	padding: 15px;
 	position: relative;
 	word-wrap: break-word;
+	width: 300px; /* 원하는 width 값으로 설정 */
 }
 
-.overlay p {
+.overlay table {
 	font-size: 0.7rem;
+}
+
+.overlay table tr th {
+	width: 110px;
+	text-align: left;
 }
 
 .overlay .info {
@@ -62,13 +68,10 @@ footer table {
 	line-height: 1.5;
 }
 
-.overlay .info p {
-	margin: 5px 0;
-}
-
 .overlay .info p strong {
 	display: inline-block;
 	width: 140px;
+	text-indent: 0; /* strong 태그에는 들여쓰기 적용하지 않음 */
 }
 
 .overlay .close {
@@ -83,7 +86,6 @@ footer table {
 	text-align: center;
 	line-height: 24px;
 }
-
 
 #loading-bar {
 	width: 100%;
