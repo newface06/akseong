@@ -52,6 +52,7 @@ footer table {
 	position: relative;
 	word-wrap: break-word;
 	width: 300px; /* 원하는 width 값으로 설정 */
+	white-space: normal !important;
 }
 
 .overlay table {
@@ -66,6 +67,13 @@ footer table {
 .overlay .info {
 	font-size: 14px;
 	line-height: 1.5;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.overlay .info td {
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 .overlay .info p strong {
@@ -113,7 +121,6 @@ footer table {
 	0% {
 		transform: translateX(-100%);
 	}
-
 	100% {
 		transform: translateX(100%);
 	}
